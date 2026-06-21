@@ -20,7 +20,7 @@ export default function HeroSection() {
   const [showSubtitle, setShowSubtitle] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  const fullTitle = "Dear Dad,";
+  const fullTitle = "Dear Papa,";
 
   useEffect(() => {
     let charIndex = 0;
