@@ -39,11 +39,18 @@ function LenisGsapSync() {
   return null;
 }
 
+const LENIS_OPTIONS = {
+  lerp: 0.1,
+  duration: 1.2,
+  smoothWheel: true,
+};
+
 export default function SmoothScrollProvider({ children }) {
   return (
-    <ReactLenis root options={{ lerp: 0.1, duration: 1.2, smoothWheel: true }}>
+    <ReactLenis root options={LENIS_OPTIONS}>
       <LenisGsapSync />
       {children}
     </ReactLenis>
   );
 }
+
