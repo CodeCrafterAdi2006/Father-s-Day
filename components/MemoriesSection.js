@@ -1,6 +1,6 @@
 "use client";
 
-import { content } from "@/lib/content";
+import { content, prefixPath } from "@/lib/content";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Plus, Image as ImageIcon } from "lucide-react";
@@ -33,7 +33,7 @@ function MemoryCard({ memory, index }) {
       {!isPlaceholder && !imageError ? (
         <div className="w-full h-full relative">
           <img
-            src={memory.image}
+            src={prefixPath(memory.image)}
             alt={`Memory ${memory.id}`}
             onError={() => setImageError(true)}
             loading="lazy"

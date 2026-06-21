@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useRef, useEffect } from "react";
+import { prefixPath } from "@/lib/content";
 
 const AudioContext = createContext(null);
 
@@ -15,7 +16,7 @@ export function AudioProvider({ children }) {
   const initializeAudio = () => {
     if (audioRef.current) return;
 
-    const audio = new Audio("/audio/Papa Mere Papa (PenduJatt.Com.Se).mp3");
+    const audio = new Audio(prefixPath("/audio/Papa Mere Papa (PenduJatt.Com.Se).mp3"));
     audio.loop = true;
     audio.volume = 0; // Start completely silent, fade it in
     audio.currentTime = 15; // Start at 0:15

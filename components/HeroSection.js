@@ -1,6 +1,6 @@
 "use client";
 
-import { content } from "@/lib/content";
+import { content, prefixPath } from "@/lib/content";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -62,7 +62,7 @@ export default function HeroSection() {
             initial={{ scale: 1.05 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-            src={content.heroImage}
+            src={prefixPath(content.heroImage)}
             alt={content.heroAlt}
             onError={() => setImageError(true)}
             className="w-full h-full object-cover"
